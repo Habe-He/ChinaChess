@@ -1,0 +1,44 @@
+html5+js打造的中国象棋，html5象棋代码，js象棋代码 我爱模板推荐
+
+html5+js打造的中国象棋，木质的背景和木质的棋盘，很有中国风，还可以换肤。玩家可选择新手水平、中级水平和大师水平，只有中级水平通过，才可以使用大师水平。兼容的浏览器：360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗。不支持IE8及以下浏览器。
+
+使用方法：
+1、在head区域引入5imoban.net.css。
+
+2、在body区域引入下面的代码：
+<div class="box" id="box">
+	<div class="chess_left">
+		<canvas id="chess">对不起，您的浏览器不支持HTML5，请升级浏览器至IE9、firefox或者谷歌浏览器！</canvas>
+		<audio src="audio/click.wav" id="clickAudio" preload="auto"></audio>
+		<!--<audio src="audio/check.wav" id="checkAudio" preload="auto"></audio>-->
+		<audio src="audio/select.wav" id="selectAudio" preload="auto"></audio>
+		<div>
+			<div class="bn_box" id="bnBox">
+				<input type="button" name="offensivePlay" id="tyroPlay" value="新手水平" />
+				<input type="button" name="offensivePlay" id="superPlay" value="中级水平" />
+                <input type="button" name="button" id="" value="大师水平" disabled />
+				<!--
+			<input type="button" name="offensivePlay" id="offensivePlay" value="先手开始" />
+			<input type="button" name="defensivePlay" id="defensivePlay" value="后手开始" />
+			-->
+				<input type="button" name="regret" id="regretBn" value="悔棋" />
+				<input type="button" name="billBn" id="billBn" value="棋谱" class="bn_box" />
+				<input type="button" name="stypeBn" id="stypeBn" value="换肤" />
+			</div>
+		</div>
+	</div>
+	<div class="chess_right" id="chessRight">
+		<select name="billList" id="billList">
+		</select>
+		<ol id="billBox" class="bill_box">
+		</ol>
+	</div>
+	<div id="moveInfo" class="move_info"> </div>
+</div>
+<script src="js/common.js"></script> 
+<script src="js/play.js"></script> 
+<script src="js/AI.js"></script> 
+<script src="js/bill.js"></script> 
+<script src="js/gambit.js"></script>
+
+更多特效欢迎访问：http://www.5imoban.net/texiao/
