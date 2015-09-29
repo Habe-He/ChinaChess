@@ -2,23 +2,23 @@ var play = play||{};
 
 play.init = function (){
 	
-	play.my				=	1;				//玩家方
-	play.map 			=	com.arr2Clone (com.initMap);		//初始化棋盘
-	play.nowManKey		=	false;			//现在要操作的棋子
-	play.pace 			=	[];				//记录每一步
-	play.isPlay 		=	true ;			//是否能走棋
-	play.mans 			=	com.mans;
-	play.bylaw 			= 	com.bylaw;
-	play.show 			= 	com.show;
-	play.showPane 		= 	com.showPane;
-	play.isOffensive	=	true;			//是否先手
-	play.depth			=	play.depth || 3;				//搜索深度
+	play.my				=	1;									// 玩家方
+	play.map 			=	com.arr2Clone (com.initMap);		// 初始化棋盘
+	play.nowManKey		=	false;								// 现在要操作的棋子
+	play.pace 			=	[];									// 记录每一步
+	play.isPlay 		=	true ;								// 是否能走棋
+	play.mans 			=	com.mans;                              
+	play.bylaw 			= 	com.bylaw;                             
+	play.show 			= 	com.show;                              
+	play.showPane 		= 	com.showPane;                          
+	play.isOffensive	=	true;								// 是否先手
+	play.depth			=	play.depth || 3;					// 搜索深度
+	                                                               
+	play.isFoul			=	false;								// 是否犯规长将
+	                                                               
+	com.pane.isShow		=	false;								// 隐藏方块
 	
-	play.isFoul			=	false;	//是否犯规长将
-	
-	com.pane.isShow		=	 false;			//隐藏方块
-	
-	//初始化棋子
+	// 初始化棋子
 	for (var i=0; i<play.map.length; i++){
 		for (var n=0; n<play.map[i].length; n++){
 			var key = play.map[i][n];
@@ -31,49 +31,12 @@ play.init = function (){
 	}
 	play.show();
 	
-	//绑定点击事件
+	// 绑定点击事件
 	com.canvas.addEventListener("click",play.clickCanvas)
-	//clearInterval(play.timer);
-	//com.get("autoPlay").addEventListener("click", function(e) {
-		//clearInterval(play.timer);
-		//play.timer = setInterval("play.AIPlay()",1000);
-	//	play.AIPlay()
-	//})
-	/*
-	com.get("offensivePlay").addEventListener("click", function(e) {
-		play.isOffensive=true;
-		play.isPlay=true ;	
-		com.get("chessRight").style.display = "none";
-		play.init();
-	})
-	
-	com.get("defensivePlay").addEventListener("click", function(e) {
-		play.isOffensive=false;
-		play.isPlay=true ;	
-		com.get("chessRight").style.display = "none";
-		play.init();
-	})
-	*/
-	
 	
 	com.get("regretBn").addEventListener("click", function(e) {
 		play.regret();
 	})
-	
-	/*
-	var initTime = new Date().getTime();
-	for (var i=0; i<=100000; i++){
-		
-		var h=""
-		var h=play.map.join();
-		//for (var n in play.mans){
-		//	if (play.mans[n].show) h+=play.mans[n].key+play.mans[n].x+play.mans[n].y
-		//}
-	}
-	var nowTime= new Date().getTime();
-	z([h,nowTime-initTime])
-	*/
-	
 }
 
 
@@ -81,7 +44,7 @@ play.init = function (){
 //悔棋
 play.regret = function (){
 	var map  = com.arr2Clone(com.initMap);
-	//初始化所有棋子
+	// 初始化所有棋子
 	for (var i=0; i<map.length; i++){
 		for (var n=0; n<map[i].length; n++){
 			var key = map[i][n];

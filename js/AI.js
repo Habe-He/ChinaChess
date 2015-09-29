@@ -90,27 +90,6 @@ AI.getMapAllMan = function (map, my){
 	return mans;
 }
 
-/*
-//取得棋谱所有己方棋子的着法
-AI.getMoves = function (map, my, txtMap){
-	var highMores = [];   //优先级高的着法
-	var manArr = AI.getMapAllMan (map, my);
-	var moves = [];
-	var history=AI.historyTable[txtMap];
-	for (var i=0; i<manArr.length; i++){
-		var man = manArr[i];
-		var val=man.bl(map);
-		for (var n=0; n<val.length; n++){
-			if (history){
-				highMores.push([man.x,man.y,val[n][0],val[n][1],man.key])
-			}else{
-				moves.push([man.x,man.y,val[n][0],val[n][1],man.key])
-			}
-		}
-	}
-	return highMores.concat(moves);
-}
-*/
 //取得棋谱所有己方棋子的着法
 AI.getMoves = function (map, my){
 	var manArr = AI.getMapAllMan (map, my);

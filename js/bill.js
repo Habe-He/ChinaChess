@@ -1,10 +1,10 @@
 var bill = bill || {};
 
-//初始化
+// 初始化
 bill.init = function (){
 	if (com.store){
 		clearInterval(bill.timer);
-		bill.setBillList(com.arr2Clone(com.initMap)); //写入棋谱列表
+		bill.setBillList(com.arr2Clone(com.initMap)); // 写入棋谱列表
 		play.isPlay=false;	
 		com.show();
 	}else {
@@ -12,13 +12,13 @@ bill.init = function (){
 	}
 }
 
-//把所有棋谱写入棋谱列表
+// 把所有棋谱写入棋谱列表
 bill.setBillList = function (map){
 	var list=com.get("billList")
 	for (var i=0; i < com.store.length ; i++){
 		var option = document.createElement('option');
-		 option.text='棋谱'+(i+1);
-		 option.value=i;
+		option.text='棋谱'+(i+1);
+		option.value=i;
 		list.add(option , null);
 	}
 	
@@ -29,7 +29,7 @@ bill.setBillList = function (map){
 }
 
 
-//棋谱分析 写入
+// 棋谱分析 写入
 bill.setMove = function (bl,inx,map){
 	var map = com.arr2Clone(map);
 	for (var i=0; i<map.length; i++){
@@ -66,7 +66,7 @@ bill.setMove = function (bl,inx,map){
 	return map;
 }
 
-//写入棋谱
+// 写入棋谱
 bill.setBox = function (bl,initMap){
 	var map = com.arr2Clone(initMap);
 	var bl= bl.split("");
